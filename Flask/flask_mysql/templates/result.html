@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sumitted results</title>
+        <link rel="stylesheet" type="text/css " href="{{ url_for('static', filename='css/resStyle.css' )}}">
+    </head>
+    <body>
+        <div class="box" style="background-color:green">
+            <p>The mail address you entered
+                {{session[Email]}}</p>
+            <p>is a VALID e-mail address! Thank you!</p>
+        </div>
+        <p>E-mail address entered:</p>
+        <hr>
+
+        <p>
+            {% for emails in all_emails : %}
+
+                {{ emails['email'] }}
+
+                {{emails['created_at']}}
+            </p>
+        {% endfor %}
+    </body>
+</html>

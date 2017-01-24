@@ -1,0 +1,17 @@
+.main p{
+  vertical-align: top;
+}
+#name {
+  display: inline-block;
+    vertical-align: top;
+}
+#desc {
+  display: inline-block;;
+  vertical-align: top;
+}
+#add{
+  margin:0px 0px 0px 400px
+}
+h1{
+
+}

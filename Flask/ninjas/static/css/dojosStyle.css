@@ -1,0 +1,18 @@
+* {
+    background-color: black;
+}
+h1 {
+    color: green;
+}
+
+p {
+    font-weight: bold;
+    font-size: 25pt;
+    color: teal;
+}
+button {
+    background-color: white;
+}
+input {
+    background-color: white;
+}

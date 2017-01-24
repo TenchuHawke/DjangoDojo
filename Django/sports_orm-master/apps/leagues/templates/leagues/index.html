@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Sports Leagues</title>
+</head>
+
+<body>
+	<h1>Leagues</h1>
+	<ol>
+		{% for league in leagues %}
+		<li>{{league.name}}</li>
+		{% empty %}
+		<p>No leagues found. Try <code>python manage.py loaddata data.json</code>, or, if that doesn't work, going <a href="{% url 'make_data' %}">here</a> (but be prepared to wait).</p>
+		{% endfor %}
+	</ol>
+	<h1>Teams</h1>
+	<ol>
+		{% for team in teams %}
+		<li>{{team.location}} {{team.team_name}}</li>
+		{% empty %}
+		<p>No teams found. Try <code>python manage.py loaddata data.json</code>, or, if that doesn't work, going <a href="{% url 'make_data' %}">here</a> (but be prepared to wait).</p>
+		{% endfor %}
+	</ol></ol>
+	<h1>Players</h1>
+	<ol>
+		{% for player in players %}
+		<li>{{player.first_name}} {{player.last_name}} {{player.team_count}}</li>
+		{% empty %}
+		<p>No teams found. Try <code>python manage.py loaddata data.json</code>, or, if that doesn't work, going <a href="{% url 'make_data' %}">here</a> (but be prepared to wait).</p>
+		{% endfor %}
+	</ol>
+	<h1>Grid</h1>
+	<ol>
+		<table class="">
+			<th>Name
+				<td>location</td>
+				<td>Current Team</td>
+				<td>League</td>
+			</th>
+			{% for player in grid %}
+			<tr>
+				<td>{{player.first_name}} {{player.last_name}}</td>
+				<td>{{player.curr_team.location}}</td>
+				<td>{{player.curr_team.team_name}}</td>
+				<td>{{player.curr_team.league.name}}</td>
+			</tr>
+			{% empty %}
+		</table>
+		<p>No teams found. Try <code>python manage.py loaddata data.json</code>, or, if that doesn't work, going <a href="{% url 'make_data' %}">here</a> (but be prepared to wait).</p>
+		{% endfor %}
+
+	</ol>
+
+</body>
+
+</html>

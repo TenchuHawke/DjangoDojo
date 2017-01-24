@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        {% load static %}
+        <title>Form Test Index</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'messageBoard/css/style.css' %}"/>
+    </head>
+
+    <body>
+        Login to edit or post.
+        <form  action="/login/login" method="post">
+          {% csrf_token %}
+          <button type="submit" name="button">Click to log in</button>
+        </form>
+
+    </body>
+
+</html>

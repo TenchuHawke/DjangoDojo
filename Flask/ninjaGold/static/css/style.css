@@ -1,0 +1,54 @@
+#income {
+    margin-left: 4%;
+    display: inline-block;
+}
+
+#cash {
+    border: 2px black solid;
+    display: inline-block;
+}
+.location {
+    height: 150px;
+    width: 20%;
+    border: 2px black solid;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 170px 0px 0px 0px;
+    margin-left: 3.5%;
+    line-height: 4px;
+}
+
+#farm {
+    background-image: url("/static/img/farm.jpg");
+}
+
+#cave {
+    background-image: url("/static/img/cave.jpg");
+}
+
+#house {
+    background-image: url("/static/img/house.jpg");
+}
+
+#casino {
+    background-image: url("/static/img/casino.jpg");
+}
+.adjustment {
+    margin: 0px 0px 0px 0px;
+}
+#container {
+    padding:20px 20px 20px 20px;
+}
+.textbox {
+    background-color: black;
+    border: 2px black solid;
+    padding-bottom: 10px;
+    /*opacity:.3;*/
+}
+.text{
+    opacity: 1;
+}

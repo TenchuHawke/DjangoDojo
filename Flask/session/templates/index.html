@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Form Test Index</title>
+    <link rel="stylesheet" type="text/css " href="{{ url_for('static', filename='css/style.css' )}}">
+    <title>Form Test Index</title>
+</head>
+
+<body>
+    <h1>Counter</h1>
+    <p> {{session['count']}}</p>
+    <form action="/button" method="post">
+        <button name="Ninja" value="Ninja">Ninja</button><br>
+    </form>
+    <form action="/button2" method="post">
+        <button name="StartOver" value="StartOver">Start Over</button>
+    </form>
+</body>
+
+</html>

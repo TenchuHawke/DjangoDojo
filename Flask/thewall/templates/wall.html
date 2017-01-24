@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sumitted results</title>
+    <link rel="stylesheet" type="text/css " href="{{ url_for('static', filename='css/wallStyle.css' )}}">
+    <script type="text/javascript" src="{{url_for('.static', filename='js/wallscripts.js')}}"></script>
+    </script>
+</head>
+
+<body>
+    <div class="container">
+
+        {% for id in messages_all : %}
+        <button class="accordion">Message {{id['id']}}</button>
+        <div class="panel">
+            <div class="messagebox">
+                <p class="messagebody">{{id['message']}}</p>
+                <p class="authorinfo"> {{id['m_created_at']}}, user:{{id['message_user']}}
+            </div>
+            {% for cId in comments_all : %} {% if cId['message_id'] == id['id']%}
+            <div class="commentbox">
+                <p class="commentbody">{{cId['comment']}}</p>
+                <p class="authorinfo">{{cId['c_created_at']}}, user:{{cId['comment_user']}}</p>
+                <hr> {%endif%}
+
+            </div>
+            {% endfor %}
+            <div class="formcontainer">
+                <form class="formbox" action="/add" method="post">
+                    <textarea name="commenttext" rows="8" columns="200"></textarea>
+                    <button type="submit" name="id" value={{id[ 'id']}}>Post New Comment</button>
+
+                </form>
+                <hr>
+            </div>
+        </div>
+        {% endfor %}
+        <div class="formcontainer">
+
+            <form class="msgformbox" action="/add" method="post">
+                <textarea name="commenttext" rows="8" columns="200"></textarea>
+                <button type="submit" name="id" value="-1">Post New Message</button>
+
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Friends</title>
+    </head>
+    <body>
+        {%if session['validemail'] == False%}
+            <div class="" style="background-color:red">
+                THAT EMAIL IS INVALID! TRY AGAIN!
+            </div>
+            {%endif%}
+            <h2>Add a Friend</h2>
+            <form action='/emails' method='POST'>
+                <label for="E-mail address">E-mail address:
+                    <input type="text" name="incEmail" id="incEmail"></label>
+                <input type="submit" value="Add">
+            </form>
+        </body>
+    </html>

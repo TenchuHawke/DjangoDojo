@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form Test Index</title>
+        <link rel="stylesheet" type="text/css " href="{{ url_for('static', filename='css/style.css' )}}">
+    </head>
+    <body>
+        <div id="container">
+            <div id="formHolder">
+
+                <form action="/users" method="post">
+                    <p>Name:
+                        <input type="text" name="name"></p>
+                    <p>
+                        Dojo location:
+                        <select name="location">
+                            <option value="Seattle">Seattle Dojo</option>
+                            <option value="San Francisco">San Fransisco</option>
+                            <option value="New York">New York</option>
+                        </select>
+                    </p>
+                    <p>
+                        Favorite language:
+                        <select name="language">
+                            <option value="Python">Python</option>
+                            <option value="Javascript">Javascript</option>
+                            <option value="C#">C#</option>
+                        </select>
+                    </p>
+                    <p>Comment (Optional):</p>
+                    <textarea name="comment" rows="10" cols="30"></textarea>
+                    <p>
+                        <input type="submit" value="Button">
+                    </p>
+
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

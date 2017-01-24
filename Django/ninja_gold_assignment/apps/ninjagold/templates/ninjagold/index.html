@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% load static %}
+    <title>Form Test Index</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'ninjagold/css/style.css' %}" />
+</head>
+
+<body>
+    <div id="container">
+        <div>
+
+            <div id="income">
+                <h4>Your Gold</h4>
+                <div id="cash">
+
+                </div>
+            </div>
+        </div>
+        <div class="location" id="farm" style="background-image: url({% static '/ninjagold/img/farm.jpg' %})">
+            <div class="textbox">
+                <div class="text">
+                <h2>Farm</h2>
+                <p>Plow the Fields</p>
+                <p>2 to 5 gold</p>
+                <div class="adjustment">
+                    <form action="/process_money" method="post">
+                        <input type="hidden" name="building" value="farm">
+                        <button type="submit">Start Farming!</button>
+                </div></div>
+            </div>
+            </form>
+
+        </div>
+        <div class="location" id="cave" style="background-image: url({% static '/ninjagold/img/cave.jpg' %})">
+            <div class="textbox">
+                <div class="text">
+                <h2>Cave</h2>
+                <p>Hunt for Treasure</p>
+                <p>5 to 20 gold</p>
+                <div class="adjustment">
+                    <form action="/process_money" method="post">
+                        <input type="hidden" name="building" value="cave">
+                        <button type="submit">Start Spelunking!</button>
+                    </form>
+                </div></div>
+            </div>
+        </div>
+        <div class="location" id="house" style="background-image: url({% static '/ninjagold/img/house.jpg' %})">
+            <div class="textbox">
+                <div class="text">
+                <h2>House</h2>
+                <p>Clean the House</p>
+                <p>2 to 5 gold</p>
+                <div class="adjustment">
+                    <form action="/process_money" method="post">
+                        <input type="hidden" name="building" value="house">
+                        <button type="submit">Start Cleaning!</button>
+                    </form>
+                </div></div>
+            </div>
+        </div>
+        <div class="location" id="casino" style="background-image: url({% static '/ninjagold/img/casino.jpg' %})">
+            <div class="textbox">
+                <div class="text">
+
+                <h2>Casino</h2>
+                <p>Gamble your gold</p>
+                <p>-50 to 50 gold</p>
+                <div class="adjustment">
+                    <form action="/process_money" method="post">
+                        <input type="hidden" name="building" value="casino">
+                        <button type="submit">Start Gambling!</button>
+                    </form>
+                </div></div>
+            </div>
+            <div id="activities">
+
+            </div>
+        </div>
+</body>
+
+</html>

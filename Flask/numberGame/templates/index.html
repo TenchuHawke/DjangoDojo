@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Form Test Index</title>
+    <link rel="stylesheet" type="text/css " href="{{ url_for('static', filename='css/style.css')}}">
+</head>
+
+<body>
+    <div id="container">
+
+
+        <div class="frame">
+            <h1>Welcome to the great number game</h1>
+
+            <p> I am thinking of a number between 1 and 100</p>
+            <p>
+                Take a Guess!
+            </p>
+            <p id="footnote">or enter no value to choose a new number</p>
+        </div>
+        {%if session['result'] == -1 %}
+        <div>
+            <p></p>
+        </div>
+        {%elif session['result'] > session['number'] %}
+        <div id="high">
+            <h1>Too High</h1>
+            <p>Try Again</p>
+        </div>
+        {%elif session['result'] < session['number'] %}
+        <div id="low">
+            <h1>Too low</h1>
+            <p>Try Again</p>
+        </div>
+        {%else %}
+        <div id="correct">
+            <h1>Correct!</h1>
+            <p>Start Over</p>
+        </div>
+
+        {%endif %}
+        <div class="frame">
+            <p></p>
+            <form action="/formGuess" method="post" value="0">
+                {%if session['result']!=session['number']%}
+                <input type="number" name="guess" min="1" max="100"><br>
+                <input type="submit" name="submit">
+                {%else%}
+                <input type="hidden" name="guess"><br>
+                <input type="submit" name="Start Over">
+                {%endif%}
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

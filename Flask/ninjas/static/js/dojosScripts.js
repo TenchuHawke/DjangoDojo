@@ -1,0 +1,1 @@
+alert("Dojo Working");

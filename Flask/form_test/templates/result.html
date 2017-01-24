@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sumitted results</title>
+        <link rel="stylesheet" type="text/css " href="{{ url_for('static', filename='css/resStyle.css' )}}">
+    </head>
+    <body>
+        <div id="container">
+            <h2>Submitted Info</h2>
+            <div class="boxes" id="headers">
+                <p>Name:</p>
+                <p>Dojo Location:</p>
+                <p>Favorite Language:</p>
+                <p>Comments:</p>
+            </div>
+            <div class="boxes" id="results">
+                <p>{{name}}</p>
+                <p>{{location}}</p>
+                <p>{{language}}</p>
+                <p>{{comment}}</p>
+            </div>
+            <button type="button">
+                <a href="/" style="text-decoration: none; color: black">
+                    Go Back
+                </a>
+            </button>
+        </div>
+    </body>
+</html>
