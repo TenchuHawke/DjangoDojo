@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load static %}
+        <title>Login Page</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'login/css/style.css' %}"/>
+    </head>
+    <body>
+        <div class="">
+            <form action="/login/login" method="post">
+                {% csrf_token %}
+                E-Mail<input type="email" name="email" value="">
+                Password
+                <input type="Password" name="password" value="">
+                <button type="submit" name="submit" value="submit">Submit Login Credentials</button>
+            </form>
+            <form action="/login/register" method="post">
+                {% csrf_token %}
+                <button type="submit2" name="submit2" value="submit2">Click to register new account</button>
+            </form>
+        </div>
+    </body>
+</html>
