@@ -25,7 +25,7 @@ def index(request):
 		# "players": Player.objects.filter(last_name__contains = 'Cooper'),
 		# "players": Player.objects.filter(first_name__contains = 'Joshua'),
 		# "players": Player.objects.filter(last_name__contains = 'Cooper').exclude(first_name__contains = 'Joshua')
-		# "players": Player.objects.filter(Q(first_name__contains = 'Wyatt') | Q(first_name__contains = 'Alexander')),
+		"players": Player.objects.filter(Q(first_name = 'Wyatt') | Q(first_name = 'Alexander')),
 		# "teams" : Team.objects.filter(league__name__contains="Atlantic soccer Conference"),
 		# "players" : Player.objects.filter(curr_team__team_name__contains = "penguins")
 		# "players" : Player.objects.filter(curr_team__league__name__contains = "International Collegiate Baseball Conference")
